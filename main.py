@@ -4,6 +4,7 @@
 
 from selenium import webdriver
 import time
+import pyttsx3
 
 
 # entrar no site Em portuges brazileiro
@@ -11,10 +12,24 @@ import time
 class entrarPt():
     def __init__(self) :
 
-        urlPt = str(input('qual o site que você quer acessar?: '))
+        engine = pyttsx3.init()
+        voice = engine.getProperty('voices')
+        msg_pt = 'Qual site você quer acessar?: '
+        engine.setProperty("voice", voice[0].id) # 2 is the 3rd item index
+
+        engine.say(msg_pt)
+        engine.runAndWait()
+
+        time.sleep(0)
+
+        esc_url = input("qual o site que você quer acessar?: ")
+        urlPt = esc_url
+
+
         httpsPt = f'https://www.{urlPt}.com'
         httpsPtLinkY = 'https://www.youtube.com/?persist_gl=1&gl=BR'
 
+        
         driver = webdriver.Chrome(executable_path=r'./chromedriver.exe')
         if urlPt == 'youtube' :
             driver.get(httpsPtLinkY)
@@ -23,6 +38,8 @@ class entrarPt():
         print(httpsPt)
         time.sleep(20)
         driver.quit()
+
+
 
 # Enter the site in English United States
 
@@ -66,11 +83,25 @@ class setLang() :
         self.setCountry = str(input('Set Your country: '))
 
         if self.setCountry == 'Brazil' or  self.setCountry == 'brazil' :
-            print('Ok Vou traduzir para você!')
-            time.sleep(3)
+            
+            engine = pyttsx3.init()
+            voice = engine.getProperty('voices')
             print(f"===================================")
+            msg_voice_one = "Ok Vou traduzir para você!"
+            msg_voice_two = "Traduzido Para Português Brasileiro!"
+
+            engine.setProperty("voice", voice[0].id) # 2 is the 3rd item index
+            engine.say(msg_voice_one)
+            print(msg_voice_one)
+
+            engine.runAndWait()
+
             time.sleep(3)
-            print('Traduzido Para Portugues Brasileiro')
+            engine.say(msg_voice_two)
+            print(msg_voice_two)
+
+            engine.runAndWait()
+
             entrarPt()
 
         elif self.setCountry == 'United States' or self.setCountry == 'united states' or self.setCountry == 'English' or self.setCountry == 'english' :
@@ -91,3 +122,19 @@ class setLang() :
 
 
 setLang()
+
+
+# def speakPt() :
+
+#     engine = pyttsx3.init()
+#     voice = engine.getProperty('voices')
+#     msg_voice = input("diga: ")
+
+
+#     engine.setProperty("voice", voice[0].id) # 2 is the 3rd item index
+#     engine.say(msg_voice)
+
+
+#     engine.runAndWait()
+
+# speakPt()
