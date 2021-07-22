@@ -15,7 +15,7 @@ class entrarPt():
         engine = pyttsx3.init()
         voice = engine.getProperty('voices')
         msg_pt = 'Qual site você quer acessar?: '
-        engine.setProperty("voice", voice[0].id) # 2 is the 3rd item index
+        engine.setProperty("voice", voice[0].id) 
 
         engine.say(msg_pt)
         engine.runAndWait()
@@ -24,8 +24,6 @@ class entrarPt():
 
         esc_url = input("qual o site que você quer acessar?: ")
         urlPt = esc_url
-
-
         httpsPt = f'https://www.{urlPt}.com'
         httpsPtLinkY = 'https://www.youtube.com/?persist_gl=1&gl=BR'
 
@@ -45,6 +43,16 @@ class entrarPt():
 
 class entrarEn():
     def __init__(self) :
+
+        engine = pyttsx3.init()
+        voice = engine.getProperty('voices')
+        msg_en = 'which site do you want to access?: '
+        engine.setProperty("voice", voice[1].id) 
+
+        engine.say(msg_en)
+        engine.runAndWait()
+
+        time.sleep(0)
        
         urlEn = str(input('which site do you want to access?: '))
         httpsEn = f'https://www.{urlEn}.com'
@@ -63,6 +71,16 @@ class entrarEn():
 
 class entrarJp():
     def __init__(self) :
+
+        engine = pyttsx3.init()
+        voice = engine.getProperty('voices')
+        msg_jp = 'どのサイトにアクセスしますか？：'
+        engine.setProperty("voice", voice[2].id) 
+
+        engine.say(msg_en)
+        engine.runAndWait()
+
+        time.sleep(0)
 
         urlJp = str(input('どのサイトにアクセスしますか？：'))
         httpsJp = f'https://{urlJp}.com/jp'
