@@ -76,8 +76,9 @@ class entrarJp():
         voice = engine.getProperty('voices')
         msg_jp = 'どのサイトにアクセスしますか？：'
         engine.setProperty("voice", voice[2].id) 
+        engine.setProperty("rate", 178)
 
-        engine.say(msg_en)
+        engine.say(msg_jp)
         engine.runAndWait()
 
         time.sleep(0)
@@ -122,20 +123,59 @@ class setLang() :
 
             entrarPt()
 
-        elif self.setCountry == 'United States' or self.setCountry == 'united states' or self.setCountry == 'English' or self.setCountry == 'english' :
-            print("Ok I'll translate for you!")
-            time.sleep(3)
+        elif self.setCountry == 'United States' or self.setCountry == 'united states' or self.setCountry == 'US' or self.setCountry == 'U.S' or self.setCountry == 'us' or self.setCountry == 'u.s' or self.setCountry == 'English' or self.setCountry == 'english' :
+            
+            engine = pyttsx3.init()
+            voice = engine.getProperty('voices')
             print(f"===================================")
+            msg_voice_one = "Ok I'll translate for you!"
+            msg_voice_two = "Translated to English United States"
+
+            engine.setProperty("voice", voice[1].id) # 2 is the 3rd item index
+            engine.say(msg_voice_one)
+            print(msg_voice_one)
+
+            engine.runAndWait()
+
             time.sleep(3)
-            print('Translated to English United States')
+            engine.say(msg_voice_two)
+            print(msg_voice_two)
+
+            engine.runAndWait()
+
             entrarEn()
         
-        elif self.setCountry == '日本語' or self.setCountry == 'にほんご' or  self.setCountry == 'ニホンゴ' or self.setCountry == 'nihongo' or self.setCountry == 'Japanese' or self.setCountry == 'japanese' or self.setCountry == 'Japones' or self.setCountry == 'japones' :
-            print('わかりました、私はあなたのために翻訳します！')
-            time.sleep(3)
+        elif (self.setCountry == '日本語'
+         or self.setCountry == 'にほんご'
+          or  self.setCountry == 'ニホンゴ'
+            or self.setCountry == 'nihongo'
+             or self.setCountry == 'Japanese'
+              or self.setCountry == 'japanese'
+               or self.setCountry == 'Japones'
+                or self.setCountry == 'japones'
+                 or self.setCountry == 'JP'
+                  or self.setCountry == 'jp'
+                   or self.setCountry == 'Jp'
+                    or self.setCountry == 'jP') :
+            
+            engine = pyttsx3.init()
+            voice = engine.getProperty('voices')
             print(f"===================================")
+            msg_voice_one = "わかりました,  わたし  わ あなた  の  ため  に  ほん'やく  します！"
+            msg_voice_two = "にほんご  に  ほん'やく"
+            
+            engine.setProperty("voice", voice[2].id) # 2 is the 3rd item index
+            engine.say(msg_voice_one)
+            print(msg_voice_one)
+
+            engine.runAndWait()
+
             time.sleep(3)
-            print('日本語に翻訳')
+            engine.setProperty("voice", voice[2].id)
+            engine.say(msg_voice_two)
+            print(msg_voice_two)
+
+            engine.runAndWait()
             entrarJp()
 
 
