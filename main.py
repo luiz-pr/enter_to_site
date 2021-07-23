@@ -101,7 +101,7 @@ class setLang() :
     def __init__(self) :
         self.setCountry = str(input('Set Your country: '))
 
-        if self.setCountry == 'Brazil' or  self.setCountry == 'brazil' :
+        if self.setCountry == 'Brazil' or self.setCountry == 'Brazil' or  self.setCountry == 'bRazil' or  self.setCountry == 'brAzil' or  self.setCountry == 'braZil' or  self.setCountry == 'brazIl' or  self.setCountry == 'braziL' or  self.setCountry == 'BRAZIL' or  self.setCountry == 'BR' or  self.setCountry == 'bR' or  self.setCountry == 'Br':
             
             engine = pyttsx3.init()
             voice = engine.getProperty('voices')
