@@ -101,7 +101,7 @@ class setLang() :
     def __init__(self) :
         self.setCountry = str(input('Set Your country: '))
 
-        if self.setCountry == 'Brazil' or  self.setCountry == 'brazil' :
+        if self.setCountry == 'Brazil' or self.setCountry == 'Brazil' or  self.setCountry == 'bRazil' or  self.setCountry == 'brAzil' or  self.setCountry == 'braZil' or  self.setCountry == 'brazIl' or  self.setCountry == 'braziL' or  self.setCountry == 'BRAZIL' or  self.setCountry == 'BR' or  self.setCountry == 'bR' or  self.setCountry == 'Br':
             
             engine = pyttsx3.init()
             voice = engine.getProperty('voices')
@@ -123,7 +123,7 @@ class setLang() :
 
             entrarPt()
 
-        elif self.setCountry == 'United States' or self.setCountry == 'united states' or self.setCountry == 'US' or self.setCountry == 'U.S' or self.setCountry == 'us' or self.setCountry == 'u.s' or self.setCountry == 'English' or self.setCountry == 'english' :
+        elif self.setCountry == 'United states' or self.setCountry == 'United States' or self.setCountry == 'united states' or self.setCountry == 'US' or self.setCountry == 'U.S' or self.setCountry == 'us' or self.setCountry == 'u.s' or self.setCountry == 'English' or self.setCountry == 'english' :
             
             engine = pyttsx3.init()
             voice = engine.getProperty('voices')
@@ -181,18 +181,3 @@ class setLang() :
 
 setLang()
 
-
-# def speakPt() :
-
-#     engine = pyttsx3.init()
-#     voice = engine.getProperty('voices')
-#     msg_voice = input("diga: ")
-
-
-#     engine.setProperty("voice", voice[0].id) # 2 is the 3rd item index
-#     engine.say(msg_voice)
-
-
-#     engine.runAndWait()
-
-# speakPt()
