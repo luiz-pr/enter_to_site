@@ -123,7 +123,7 @@ class setLang() :
 
             entrarPt()
 
-        elif self.setCountry == 'United States' or self.setCountry == 'united states' or self.setCountry == 'US' or self.setCountry == 'U.S' or self.setCountry == 'us' or self.setCountry == 'u.s' or self.setCountry == 'English' or self.setCountry == 'english' :
+        elif self.setCountry == 'United states' or self.setCountry == 'United States' or self.setCountry == 'united states' or self.setCountry == 'US' or self.setCountry == 'U.S' or self.setCountry == 'us' or self.setCountry == 'u.s' or self.setCountry == 'English' or self.setCountry == 'english' :
             
             engine = pyttsx3.init()
             voice = engine.getProperty('voices')
