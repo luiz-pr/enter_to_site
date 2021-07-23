@@ -181,18 +181,3 @@ class setLang() :
 
 setLang()
 
-
-# def speakPt() :
-
-#     engine = pyttsx3.init()
-#     voice = engine.getProperty('voices')
-#     msg_voice = input("diga: ")
-
-
-#     engine.setProperty("voice", voice[0].id) # 2 is the 3rd item index
-#     engine.say(msg_voice)
-
-
-#     engine.runAndWait()
-
-# speakPt()
