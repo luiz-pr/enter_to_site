@@ -27,7 +27,7 @@ class entrarPt():
         httpsPt = f'https://www.{urlPt}.com'
         httpsPtLinkY = 'https://www.youtube.com/?persist_gl=1&gl=BR'
 
-        
+        time.sleep(10)
         driver = webdriver.Chrome(executable_path=r'./chromedriver.exe')
         if urlPt == 'youtube' :
             driver.get(httpsPtLinkY)
